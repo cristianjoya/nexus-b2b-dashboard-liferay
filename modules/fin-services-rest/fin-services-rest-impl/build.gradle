@@ -1,0 +1,11 @@
+apply plugin: "com.liferay.portal.tools.rest.builder"
+
+dependencies {
+	api project(":modules:fin-services-rest:fin-services-rest-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	compileOnly project(":modules:fin-services:fin-services-api")
+	compileOnly project(":modules:fin-services:fin-services-service")
+}
+
+group = "fin.services.rest"

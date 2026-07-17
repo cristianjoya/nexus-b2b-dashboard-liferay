@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.4.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_4_0.dtd">
+
+
+
+<resource-action-mapping>
+
+	<model-resource>
+
+		<model-name>fin.services.rest.dto.v1_0.Account</model-name>
+
+		<portlet-ref>
+
+			<root>true</root>
+
+		</portlet-ref>
+
+		<weight>1</weight>
+
+		<permissions>
+
+			<supports>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</supports>
+
+			<site-member-defaults />
+
+			<guest-defaults />
+
+			<guest-unsupported>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</guest-unsupported>
+
+		</permissions>
+
+	</model-resource>
+
+	<model-resource>
+
+		<model-name>fin.services.rest.dto.v1_0.Transaction</model-name>
+
+		<portlet-ref>
+
+			<root>true</root>
+
+		</portlet-ref>
+
+		<weight>2</weight>
+
+		<permissions>
+
+			<supports>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</supports>
+
+			<site-member-defaults />
+
+			<guest-defaults />
+
+			<guest-unsupported>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</guest-unsupported>
+
+		</permissions>
+
+	</model-resource>
+
+	<model-resource>
+
+		<model-name>fin.services.rest.dto.v1_0.CreditApplication</model-name>
+
+		<portlet-ref>
+
+			<root>true</root>
+
+		</portlet-ref>
+
+		<weight>3</weight>
+
+		<permissions>
+
+			<supports>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</supports>
+
+			<site-member-defaults />
+
+			<guest-defaults />
+
+			<guest-unsupported>
+
+				<action-key>ADD</action-key>
+
+				<action-key>DELETE</action-key>
+
+				<action-key>PERMISSIONS</action-key>
+
+				<action-key>UPDATE</action-key>
+
+				<action-key>VIEW</action-key>
+
+			</guest-unsupported>
+
+		</permissions>
+
+	</model-resource>
+
+</resource-action-mapping>
+
+

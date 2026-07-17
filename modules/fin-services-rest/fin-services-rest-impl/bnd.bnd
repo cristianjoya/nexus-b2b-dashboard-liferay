@@ -1,0 +1,3 @@
+Bundle-Name: fin-services-rest-impl
+Bundle-SymbolicName: fin.services.rest.impl
+Bundle-Version: 1.0.0

@@ -1,0 +1,15 @@
+assemble:
+    - from: vite-build
+      into: static
+fin-services-dashboard:
+    cssURLs:
+        - assets/*.css
+    friendlyURLMapping: fin-services-dashboard
+    htmlElementName: fin-services-dashboard
+    instanceable: false
+    name: Nexus Fin Services Dashboard
+    portletCategoryName: category.client-extensions
+    type: customElement
+    urls:
+        - assets/*.js
+    useESM: true

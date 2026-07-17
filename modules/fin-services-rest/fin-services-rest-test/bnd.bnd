@@ -1,0 +1,5 @@
+Bundle-Name: fin-services-rest-test
+Bundle-SymbolicName: fin.services.rest.test
+Bundle-Version: 1.0.0
+-includeresource: fin.services.rest.client.jar=../fin-services-rest-client/build/libs/fin.services.rest.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

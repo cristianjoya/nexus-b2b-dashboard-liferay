@@ -1,0 +1,50 @@
+/**
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+package fin.services.model;
+
+import com.liferay.portal.kernel.annotation.ImplementationClassName;
+import com.liferay.portal.kernel.model.PersistedModel;
+import com.liferay.portal.kernel.util.Accessor;
+
+import org.osgi.annotation.versioning.ProviderType;
+
+/**
+ * The extended model interface for the FinTransaction service. Represents a row in the &quot;FinServices_FinTransaction&quot; database table, with each column mapped to a property of this class.
+ *
+ * @author Brian Wing Shun Chan
+ * @see FinTransactionModel
+ * @generated
+ */
+@ImplementationClassName("fin.services.model.impl.FinTransactionImpl")
+@ProviderType
+public interface FinTransaction extends FinTransactionModel, PersistedModel {
+
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never modify this interface directly. Add methods to <code>fin.services.model.impl.FinTransactionImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 */
+	public static final Accessor<FinTransaction, Long> TRANSACTION_ID_ACCESSOR =
+		new Accessor<FinTransaction, Long>() {
+
+			@Override
+			public Long get(FinTransaction finTransaction) {
+				return finTransaction.getTransactionId();
+			}
+
+			@Override
+			public Class<Long> getAttributeClass() {
+				return Long.class;
+			}
+
+			@Override
+			public Class<FinTransaction> getTypeClass() {
+				return FinTransaction.class;
+			}
+
+		};
+
+}

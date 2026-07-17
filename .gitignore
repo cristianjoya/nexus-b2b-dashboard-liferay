@@ -1,0 +1,52 @@
+**/*.iml
+**/.ivy
+**/.classpath
+**/.project
+**/.sass-cache
+**/.settings
+**/bin
+**/build
+**/build_gradle
+**/dist
+**/node_modules
+**/node_modules_cache
+**/test-coverage
+**/tmp
+**/.web_bundle_build
+.gradle
+.idea
+/bundles
+/gradle-*.properties
+/plugins-sdk/**/classes
+/plugins-sdk/**/ivy.xml.MD5
+/plugins-sdk/**/liferay-hook.xml.processed
+/plugins-sdk/build.*.properties
+/plugins-sdk/dependencies/**/*.jar
+/plugins-sdk/dist
+/plugins-sdk/lib
+test-results
+
+# Local / generated
+cookies.txt
+*.cookie
+.env
+.env.*
+!.env.example
+
+# Accidental compile artifacts at repo root
+/OSGI-INF/
+/com/
+
+# Client extension build output
+client-extensions/**/vite-build/
+client-extensions/**/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+
+# Local maintainer notes
+docs/INTERNAL*.md
+scripts/push-public.ps1

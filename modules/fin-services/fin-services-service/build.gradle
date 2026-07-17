@@ -1,0 +1,13 @@
+dependencies {
+	api project(":modules:fin-services:fin-services-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../fin-services-api/src/main/java"
+	osgiModule = true
+	testDir = "../fin-services-test/src/testIntegration/java"
+}
+
+group = "fin.services"

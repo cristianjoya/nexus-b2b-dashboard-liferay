@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="fin.services.model.FinAccount">
+		<field name="uuid" type="String" />
+		<field name="accountId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="ownerUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accountNumber" type="String" />
+		<field name="accountName" type="String" />
+		<field name="accountType" type="String" />
+		<field name="balance" type="double" />
+		<field name="status" type="int" />
+		<field name="cardScheme" type="String" />
+		<field name="cardBrand" type="String" />
+		<field name="cardBankName" type="String" />
+		<field name="cardCountryName" type="String" />
+	</model>
+	<model name="fin.services.model.FinCreditApp">
+		<field name="uuid" type="String" />
+		<field name="creditAppId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accountId" type="long" />
+		<field name="applicantName" type="String" />
+		<field name="requestedAmount" type="double" />
+		<field name="purpose" type="String" />
+		<field name="status" type="int" />
+		<field name="reviewNotes" type="String" />
+	</model>
+	<model name="fin.services.model.FinTransaction">
+		<field name="uuid" type="String" />
+		<field name="transactionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accountId" type="long" />
+		<field name="transactionType" type="String" />
+		<field name="amount" type="double" />
+		<field name="description" type="String" />
+		<field name="transactionDate" type="Date" />
+		<field name="status" type="int" />
+	</model>
+</model-hints>

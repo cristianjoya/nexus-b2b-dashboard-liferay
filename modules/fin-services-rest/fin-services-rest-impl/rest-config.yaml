@@ -1,0 +1,10 @@
+apiDir: "../fin-services-rest-api/src/main/java"
+apiPackagePath: "fin.services.rest"
+application:
+    baseURI: "/fin-services-rest"
+    className: "FinServicesRestApplication"
+    name: "FinServicesRest"
+author: "krism"
+clientDir: "../fin-services-rest-client/src/main/java"
+javaEEPackage: "jakarta"
+testDir: "../fin-services-rest-test/src/testIntegration/java"

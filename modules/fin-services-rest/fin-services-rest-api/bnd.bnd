@@ -1,0 +1,6 @@
+Bundle-Name: fin-services-rest-api
+Bundle-SymbolicName: fin.services.rest.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	fin.services.rest.dto.v1_0,\
+	fin.services.rest.resource.v1_0

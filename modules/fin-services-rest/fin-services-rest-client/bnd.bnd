@@ -1,0 +1,3 @@
+Bundle-Name: fin-services-rest-client
+Bundle-SymbolicName: fin.services.rest.client
+Bundle-Version: 1.0.0

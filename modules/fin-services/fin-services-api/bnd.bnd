@@ -1,0 +1,10 @@
+Bundle-Name: fin-services-api
+Bundle-SymbolicName: fin.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	fin.services.exception,\
+	fin.services.model,\
+	fin.services.service,\
+	fin.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../fin-services-service/service.xml

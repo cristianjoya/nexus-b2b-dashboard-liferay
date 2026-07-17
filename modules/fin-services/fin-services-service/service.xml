@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="fin.services">
+	<namespace>FinServices</namespace>
+
+	<entity local-service="true" name="FinAccount" remote-service="false" uuid="true">
+
+		<column name="accountId" primary="true" type="long" />
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="ownerUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="accountNumber" type="String" />
+		<column name="accountName" type="String" />
+		<column name="accountType" type="String" />
+		<column name="balance" type="double" />
+		<column name="status" type="int" />
+
+		<column name="cardScheme" type="String" />
+		<column name="cardBrand" type="String" />
+		<column name="cardBankName" type="String" />
+		<column name="cardCountryName" type="String" />
+
+		<order>
+			<order-by asc="false" field="createDate" />
+		</order>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="G_A" return-type="FinAccount" unique="true">
+			<finder-column name="groupId" />
+			<finder-column name="accountNumber" />
+		</finder>
+
+		<finder name="G_O" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="ownerUserId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="FinTransaction" remote-service="false" uuid="true">
+
+		<column name="transactionId" primary="true" type="long" />
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="accountId" type="long" />
+		<column name="transactionType" type="String" />
+		<column name="amount" type="double" />
+		<column name="description" type="String" />
+		<column name="transactionDate" type="Date" />
+		<column name="status" type="int" />
+
+		<order>
+			<order-by asc="false" field="transactionDate" />
+		</order>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="G_A" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="accountId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="FinCreditApp" remote-service="false" uuid="true">
+
+		<column name="creditAppId" primary="true" type="long" />
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="accountId" type="long" />
+		<column name="applicantName" type="String" />
+		<column name="requestedAmount" type="double" />
+		<column name="purpose" type="String" />
+		<column name="status" type="int" />
+		<column name="reviewNotes" type="String" />
+
+		<order>
+			<order-by asc="false" field="createDate" />
+		</order>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="G_A" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="accountId" />
+		</finder>
+
+	</entity>
+</service-builder>

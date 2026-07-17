@@ -1,0 +1,14 @@
+task npmBuild(type: Exec) {
+	if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+		commandLine 'cmd', '/c', 'npm', 'run', 'build'
+	}
+	else {
+		commandLine 'npm', 'run', 'build'
+	}
+
+	workingDir project.projectDir
+}
+
+assembleClientExtension {
+	dependsOn npmBuild
+}

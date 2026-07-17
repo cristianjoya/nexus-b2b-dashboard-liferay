@@ -1,0 +1,888 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+
+/* Utilities scoped to the CE host so they don't fight Clay/Lexicon. */
+@layer utilities {
+	.nexus-app {
+		@tailwind utilities;
+	}
+}
+
+@theme {
+	--font-sans: "Segoe UI", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Host del custom element: tema claro forzado, independiente de Liferay */
+.nexus-app {
+	background-color: #f1f5f9 !important;
+	color: #0f172a !important;
+	color-scheme: light;
+	display: block;
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	min-height: 12rem;
+	width: 100%;
+}
+
+.nexus-app *,
+.nexus-app *::before,
+.nexus-app *::after {
+	box-sizing: border-box;
+}
+
+.nexus-dashboard {
+	background-color: #f1f5f9 !important;
+	color: #0f172a !important;
+	color-scheme: light;
+	min-height: 100%;
+}
+
+.nexus-card {
+	background-color: #ffffff !important;
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 1rem;
+	box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+	color: #0f172a !important;
+}
+
+.nexus-title {
+	color: #0f172a !important;
+}
+
+.nexus-subtitle {
+	color: #475569 !important;
+}
+
+.nexus-label {
+	color: #334155 !important;
+}
+
+.nexus-text-muted {
+	color: #64748b !important;
+}
+
+.nexus-text-accent {
+	color: #1d4ed8 !important;
+}
+
+.nexus-text-danger {
+	color: #b91c1c !important;
+}
+
+.nexus-input,
+.nexus-select {
+	appearance: auto;
+	background-color: #ffffff !important;
+	border: 1px solid #cbd5e1 !important;
+	border-radius: 0.625rem;
+	color: #0f172a !important;
+	color-scheme: light;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+	padding: 0.625rem 0.875rem;
+	width: 100%;
+	-webkit-text-fill-color: #0f172a !important;
+}
+
+.nexus-input::placeholder {
+	color: #64748b !important;
+	opacity: 1 !important;
+	-webkit-text-fill-color: #64748b !important;
+}
+
+.nexus-input::-webkit-input-placeholder {
+	color: #64748b !important;
+	opacity: 1 !important;
+	-webkit-text-fill-color: #64748b !important;
+}
+
+.nexus-input::-moz-placeholder {
+	color: #64748b !important;
+	opacity: 1 !important;
+}
+
+.nexus-input:focus,
+.nexus-select:focus {
+	background-color: #ffffff !important;
+	border-color: #2563eb !important;
+	box-shadow: 0 0 0 3px rgb(37 99 235 / 0.15);
+	color: #0f172a !important;
+	outline: none;
+	-webkit-text-fill-color: #0f172a !important;
+}
+
+.nexus-select option {
+	background-color: #ffffff !important;
+	color: #0f172a !important;
+}
+
+.nexus-btn-primary {
+	background-color: #2563eb !important;
+	border: none;
+	border-radius: 0.625rem;
+	color: #ffffff !important;
+	cursor: pointer;
+	font-size: 0.9375rem;
+	font-weight: 600;
+	padding: 0.625rem 1rem;
+	transition: background-color 0.15s ease;
+}
+
+.nexus-btn-primary:hover:not(:disabled) {
+	background-color: #1d4ed8 !important;
+}
+
+.nexus-btn-primary:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.nexus-btn-secondary {
+	background-color: #ffffff !important;
+	border: 1px solid #cbd5e1 !important;
+	border-radius: 0.625rem;
+	color: #334155 !important;
+	cursor: pointer;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	padding: 0.625rem 1rem;
+	transition: background-color 0.15s ease;
+}
+
+.nexus-btn-secondary:hover:not(:disabled) {
+	background-color: #f8fafc !important;
+}
+
+.nexus-btn-danger {
+	background-color: #dc2626 !important;
+	border: none;
+	border-radius: 0.625rem;
+	color: #ffffff !important;
+	cursor: pointer;
+	font-size: 0.9375rem;
+	font-weight: 600;
+	padding: 0.625rem 1rem;
+}
+
+.nexus-btn-danger:hover:not(:disabled) {
+	background-color: #b91c1c !important;
+}
+
+.nexus-btn-ghost {
+	background-color: #ffffff !important;
+	border: 1px solid #cbd5e1 !important;
+	border-radius: 0.5rem;
+	color: #334155 !important;
+	cursor: pointer;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	padding: 0.375rem 0.75rem;
+}
+
+.nexus-btn-ghost:hover:not(:disabled) {
+	background-color: #eff6ff !important;
+	border-color: #93c5fd !important;
+	color: #1d4ed8 !important;
+}
+
+.nexus-btn-ghost-danger:hover:not(:disabled) {
+	background-color: #fef2f2 !important;
+	border-color: #fca5a5 !important;
+	color: #b91c1c !important;
+}
+
+.nexus-btn-ghost:disabled,
+.nexus-btn-secondary:disabled,
+.nexus-btn-danger:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.nexus-alert-success {
+	background-color: #ecfdf5 !important;
+	border: 1px solid #6ee7b7 !important;
+	color: #064e3b !important;
+}
+
+.nexus-toast {
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nexus-toast-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.nexus-toast-hidden {
+	opacity: 0;
+	transform: translateY(-0.25rem);
+}
+
+.nexus-card-scheme-visa {
+	background-color: #1a1f71 !important;
+	color: #ffffff !important;
+}
+
+.nexus-card-scheme-mastercard {
+	background-color: #eb001b !important;
+	color: #ffffff !important;
+}
+
+.nexus-card-scheme-amex {
+	background-color: #006fcf !important;
+	color: #ffffff !important;
+}
+
+.nexus-card-scheme-discover {
+	background-color: #ff6000 !important;
+	color: #ffffff !important;
+}
+
+.nexus-card-scheme-default {
+	background-color: #334155 !important;
+	color: #ffffff !important;
+}
+
+.nexus-bin-hint {
+	color: #64748b !important;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.nexus-bin-hint-on-card {
+	color: rgb(255 255 255 / 0.85) !important;
+	margin: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.nexus-form-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 1.35rem;
+}
+
+@media (min-width: 640px) {
+	.nexus-form-stack {
+		gap: 1.65rem;
+	}
+}
+
+.nexus-form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.nexus-form-field-preview {
+	margin-top: 0.15rem;
+	padding-bottom: 0.35rem;
+}
+
+.nexus-form-field-preview .nexus-alert-warning,
+.nexus-form-field-preview .nexus-bin-hint {
+	display: block;
+	margin-top: 0.15rem;
+}
+
+.nexus-form-field-grid {
+	display: grid;
+	gap: 1.35rem;
+}
+
+@media (min-width: 640px) {
+	.nexus-form-field-grid {
+		gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.nexus-form-field-grid-pair {
+	align-items: start;
+}
+
+.nexus-form-pair-item {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-rows: auto auto minmax(1.15rem, auto);
+	min-width: 0;
+}
+
+.nexus-form-pair-item .nexus-label {
+	display: block;
+	line-height: 1.25;
+	min-height: 1.25rem;
+}
+
+.nexus-form-pair-item .nexus-input,
+.nexus-form-pair-item .nexus-select {
+	width: 100%;
+}
+
+.nexus-form-field-hint {
+	color: #64748b !important;
+	font-size: 0.75rem;
+	line-height: 1.15rem;
+	min-height: 1.15rem;
+}
+
+.nexus-form-callout {
+	background: #f8fafc !important;
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 0.75rem;
+	color: #334155 !important;
+	font-size: 0.8125rem;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0.65rem 0.85rem;
+}
+
+.nexus-form-callout strong {
+	color: #0f172a !important;
+	font-weight: 700;
+}
+
+.nexus-form-textarea {
+	min-height: 4.5rem;
+	resize: vertical;
+}
+
+.nexus-form-textarea-sm {
+	min-height: 3.5rem;
+}
+
+@media (min-width: 640px) {
+	.nexus-form-textarea {
+		min-height: 5.5rem;
+	}
+
+	.nexus-form-textarea-sm {
+		min-height: 4.25rem;
+	}
+}
+
+.nexus-bin-card {
+	border-radius: 1rem;
+	box-shadow:
+		0 10px 24px -12px rgb(15 23 42 / 0.45),
+		inset 0 1px 0 rgb(255 255 255 / 0.18);
+	color: #ffffff !important;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	margin: 0.35rem 0 0.5rem;
+	max-width: 22rem;
+	min-height: 8.5rem;
+	overflow: hidden;
+	padding: 1rem 1.1rem;
+	position: relative;
+	width: 100%;
+}
+
+.nexus-bin-card::before {
+	background: radial-gradient(
+		circle at top right,
+		rgb(255 255 255 / 0.22),
+		transparent 55%
+	);
+	content: '';
+	inset: 0;
+	pointer-events: none;
+	position: absolute;
+}
+
+.nexus-bin-card > * {
+	position: relative;
+	z-index: 1;
+}
+
+.nexus-bin-card-visa {
+	background: linear-gradient(135deg, #1a237e 0%, #283593 45%, #3949ab 100%);
+}
+
+.nexus-bin-card-mastercard {
+	background: linear-gradient(135deg, #1f2937 0%, #111827 55%, #0f172a 100%);
+}
+
+.nexus-bin-card-amex {
+	background: linear-gradient(135deg, #0262ad 0%, #0284c7 50%, #0ea5e9 100%);
+}
+
+.nexus-bin-card-discover {
+	background: linear-gradient(135deg, #9a3412 0%, #c2410c 45%, #ea580c 100%);
+}
+
+.nexus-bin-card-default {
+	background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+}
+
+.nexus-bin-card-loading {
+	background: linear-gradient(135deg, #475569 0%, #334155 100%);
+	justify-content: center;
+	min-height: 5.5rem;
+}
+
+.nexus-bin-card-shimmer {
+	animation: nexus-bin-shimmer 1.4s ease-in-out infinite;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgb(255 255 255 / 0.18),
+		transparent
+	);
+	inset: 0;
+	position: absolute;
+}
+
+@keyframes nexus-bin-shimmer {
+	0% {
+		transform: translateX(-40%);
+	}
+	100% {
+		transform: translateX(40%);
+	}
+}
+
+.nexus-bin-card-top {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nexus-bin-card-brand {
+	align-items: center;
+	display: flex;
+	gap: 0.55rem;
+	min-width: 0;
+}
+
+.nexus-bin-card-brand-name {
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.nexus-bin-scheme-label {
+	font-size: 0.95rem;
+	font-style: italic;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.nexus-bin-mc-mark {
+	display: inline-flex;
+	height: 1.35rem;
+	position: relative;
+	width: 2.1rem;
+}
+
+.nexus-bin-mc-circle {
+	border-radius: 9999px;
+	height: 1.35rem;
+	position: absolute;
+	top: 0;
+	width: 1.35rem;
+}
+
+.nexus-bin-mc-circle-red {
+	background: #eb001b;
+	left: 0;
+}
+
+.nexus-bin-mc-circle-orange {
+	background: #f79e1b;
+	left: 0.75rem;
+	mix-blend-mode: screen;
+	opacity: 0.95;
+}
+
+.nexus-bin-chip {
+	background: linear-gradient(145deg, #fde68a 0%, #f59e0b 45%, #d97706 100%);
+	border-radius: 0.3rem;
+	box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
+	height: 1.15rem;
+	width: 1.55rem;
+}
+
+.nexus-bin-card-number {
+	color: #ffffff !important;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 1.05rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	line-height: 1.3;
+	margin: 0.15rem 0 0;
+	word-break: break-all;
+}
+
+.nexus-bin-card-meta {
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.nexus-bin-card-meta-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	min-width: 0;
+}
+
+.nexus-bin-card-meta-end {
+	text-align: right;
+}
+
+.nexus-bin-card-meta-label {
+	color: rgb(255 255 255 / 0.65) !important;
+	font-size: 0.65rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.nexus-bin-card-meta-value {
+	color: #ffffff !important;
+	font-size: 0.8rem;
+	font-weight: 600;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.nexus-bin-card-footer {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.nexus-bin-pill {
+	background: rgb(255 255 255 / 0.14);
+	border: 1px solid rgb(255 255 255 / 0.18);
+	border-radius: 9999px;
+	color: #ffffff !important;
+	font-size: 0.68rem;
+	font-weight: 600;
+	padding: 0.2rem 0.55rem;
+}
+
+.nexus-bin-pill-ok {
+	background: rgb(16 185 129 / 0.25);
+	border-color: rgb(52 211 153 / 0.45);
+}
+
+.nexus-bin-pill-bad {
+	background: rgb(239 68 68 / 0.28);
+	border-color: rgb(252 165 165 / 0.5);
+}
+
+@media (max-width: 480px) {
+	.nexus-bin-card {
+		max-width: 100%;
+		padding: 0.9rem 1rem;
+	}
+
+	.nexus-bin-card-number {
+		font-size: 0.95rem;
+		letter-spacing: 0.08em;
+	}
+}
+
+.nexus-account-table tbody tr {
+	vertical-align: top;
+}
+
+.nexus-account-card-cell {
+	background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 0.875rem;
+	min-width: 14rem;
+	padding: 0.875rem 1rem;
+}
+
+.nexus-account-card-number {
+	color: #0f172a !important;
+	letter-spacing: 0.04em;
+}
+
+.nexus-code-chip {
+	background-color: #f1f5f9 !important;
+	border-radius: 0.375rem;
+	color: #334155 !important;
+	font-family: ui-monospace, monospace;
+	padding: 0.125rem 0.375rem;
+}
+
+.nexus-alert-warning {
+	background-color: #fffbeb !important;
+	border: 1px solid #fcd34d !important;
+	color: #78350f !important;
+}
+
+.nexus-alert-error {
+	background-color: #fef2f2 !important;
+	border: 1px solid #fca5a5 !important;
+	color: #7f1d1d !important;
+}
+
+.nexus-badge-active {
+	background-color: #d1fae5 !important;
+	color: #065f46 !important;
+}
+
+.nexus-badge-inactive {
+	background-color: #e2e8f0 !important;
+	color: #334155 !important;
+}
+
+.nexus-badge-warning {
+	background-color: #fef3c7 !important;
+	color: #92400e !important;
+}
+
+.nexus-badge-danger {
+	background-color: #fee2e2 !important;
+	color: #991b1b !important;
+}
+
+.nexus-badge-info {
+	background-color: #dbeafe !important;
+	color: #1e40af !important;
+}
+
+.nexus-data-table tbody tr {
+	vertical-align: top;
+}
+
+.nexus-record-cell {
+	min-width: 12rem;
+}
+
+.nexus-record-icon {
+	align-items: center;
+	border-radius: 9999px;
+	display: inline-flex;
+	flex-shrink: 0;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 2.5rem;
+	justify-content: center;
+	width: 2.5rem;
+}
+
+.nexus-record-icon-credit {
+	background-color: #d1fae5 !important;
+	color: #047857 !important;
+}
+
+.nexus-record-icon-debit {
+	background-color: #ffedd5 !important;
+	color: #c2410c !important;
+}
+
+.nexus-avatar-chip {
+	align-items: center;
+	background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%) !important;
+	border: 1px solid #bfdbfe !important;
+	border-radius: 9999px;
+	color: #1d4ed8 !important;
+	display: inline-flex;
+	flex-shrink: 0;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: 2.5rem;
+	justify-content: center;
+	width: 2.5rem;
+}
+
+.nexus-account-chip {
+	background-color: #f8fafc !important;
+	border: 1px solid #e2e8f0 !important;
+	border-radius: 9999px;
+	color: #334155 !important;
+	font-size: 0.75rem;
+	font-weight: 600;
+	padding: 0.375rem 0.75rem;
+}
+
+.nexus-amount-positive {
+	color: #047857 !important;
+}
+
+.nexus-amount-negative {
+	color: #b91c1c !important;
+}
+
+.nexus-empty-state {
+	color: #64748b !important;
+}
+
+.nexus-table-head {
+	background-color: #f8fafc !important;
+	color: #334155 !important;
+}
+
+.nexus-table-body {
+	background-color: #ffffff !important;
+}
+
+.nexus-table-row:hover {
+	background-color: #f8fafc !important;
+}
+
+.nexus-modal-backdrop {
+	align-items: flex-start !important;
+	background-color: rgb(15 23 42 / 0.55) !important;
+	box-sizing: border-box;
+	justify-content: center !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 640px) {
+	.nexus-modal-backdrop {
+		align-items: center !important;
+	}
+}
+
+.nexus-modal-panel {
+	background-color: #ffffff !important;
+	box-sizing: border-box;
+	color: #0f172a !important;
+	display: flex;
+	flex-direction: column;
+	margin-block: auto;
+	max-height: calc(100dvh - 2rem);
+	max-width: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+@media (min-width: 640px) {
+	.nexus-modal-panel {
+		max-height: calc(100dvh - 3rem);
+	}
+}
+
+.nexus-modal-header {
+	flex-shrink: 0;
+	padding-bottom: 0.75rem;
+}
+
+.nexus-modal-body {
+	-webkit-overflow-scrolling: touch;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	padding-block: 0.25rem 0.75rem;
+}
+
+.nexus-modal-footer {
+	background-color: #ffffff !important;
+	border-top: 1px solid #e2e8f0;
+	display: flex;
+	flex-shrink: 0;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: flex-end;
+	padding-top: 1rem;
+}
+
+.nexus-modal-panel .nexus-typeahead-menu {
+	max-height: min(12rem, 40vh);
+}
+
+/* Sobrescribe utilidades Tailwind dentro del widget cuando Liferay las anula */
+.nexus-app .bg-white {
+	background-color: #ffffff !important;
+}
+
+.nexus-app .bg-slate-50 {
+	background-color: #f8fafc !important;
+}
+
+.nexus-app .text-slate-900,
+.nexus-app .text-slate-950 {
+	color: #0f172a !important;
+}
+
+.nexus-app .text-slate-700,
+.nexus-app .text-slate-600 {
+	color: #475569 !important;
+}
+
+.nexus-app .text-slate-500 {
+	color: #64748b !important;
+}
+
+.nexus-app .text-blue-700 {
+	color: #1d4ed8 !important;
+}
+
+.nexus-app .text-red-700 {
+	color: #b91c1c !important;
+}
+
+.nexus-app .text-emerald-800,
+.nexus-app .text-emerald-900 {
+	color: #065f46 !important;
+}
+
+.nexus-app .text-amber-950 {
+	color: #78350f !important;
+}
+
+.nexus-app table {
+	background-color: #ffffff !important;
+	border-collapse: collapse;
+	color: #0f172a !important;
+}
+
+.nexus-app th,
+.nexus-app td {
+	color: #0f172a !important;
+}
+
+.nexus-typeahead-menu {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 0.75rem;
+	box-shadow:
+		0 10px 15px -3px rgb(15 23 42 / 0.1),
+		0 4px 6px -4px rgb(15 23 42 / 0.1);
+	list-style: none;
+	margin: 0;
+	padding: 0.25rem;
+}
+
+.nexus-typeahead-hint {
+	color: #64748b;
+}
+
+.nexus-typeahead-option {
+	background: transparent;
+	border: none;
+	border-radius: 0.5rem;
+	color: #0f172a;
+	cursor: pointer;
+	display: block;
+	padding: 0.625rem 0.75rem;
+	text-align: left;
+	width: 100%;
+}
+
+.nexus-typeahead-option:hover,
+.nexus-typeahead-option-active {
+	background: #eff6ff;
+}
